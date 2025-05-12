@@ -122,15 +122,20 @@ Once it’s plugged, connect the 5 V power supply and that’s all.
 
 There are two parts in the TX/RX, the kernel driver and the PRU code. Follow these steps: 
 
-* In order to load the kernel driver, run the following command inside the Driver folder: _sudo ./load_test.sh._ With this script, you can change the IP taken by the interface. That’s the IP in the VLC network, so TX and RX must have different IPs (for example TX: 192.168.0.1 and RX 192.168.0.2).
+* In order to load the kernel driver, run the following command inside the Driver folder:
+```
+sudo chmod +x load_test.sh
+sudo ./load_test.sh
+```
+With this script, you can change the IP taken by the interface. That’s the IP in the VLC network, so TX and RX must have different IPs (for example TX: 192.168.0.1 and RX 192.168.0.2).
 * Once the module driver is installed, make sure that proper paths and symbolic links have been made for the PRU compiler (clpru) and linker (lnkpru). The following commands can be used to this end:
-
-    _cd /usr/share/ti/cgt-pru_<br/>
-    _sudo mkdir bin_<br/>
-    _cd bin_<br/>
-    _sudo ln -s /usr/bin/clpru clpru_<br/>
-    _sudo ln -s /usr/bin/lnkpru lnkpru_<br/>
-
+```
+cd /usr/share/ti/cgt-pru
+sudo mkdir bin
+cd bin
+sudo ln -s /usr/bin/clpru clpru
+sudo ln -s /usr/bin/lnkpru lnkpru
+```
 * Then go to the PRU folder, enter TX/RX and run sudo _./deploy.sh_. This will boot up the PRUs with the code necessary to transmit and receive VLC data.
     
 #### Working with the TX/RX
