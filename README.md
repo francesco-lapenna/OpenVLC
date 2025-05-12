@@ -101,6 +101,7 @@ sudo dpkg -i linux-headers-4.4.54-ti-r93_1stretch_armhf.deb
 ```
 # for OpenVLC_VL_IR version:
 sudo git clone https://github.com/openvlc/OpenVLC
+sudo mkdir /home/Debian
 sudo cp -r OpenVLC/OpenVLC_VL_IR/Driver /home/Debian
 sudo cp -r OpenVLC/OpenVLC_VL_IR/PRU /home/Debian
 ```
