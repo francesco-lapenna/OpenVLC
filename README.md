@@ -91,7 +91,11 @@ sudo apt-get update
 ```
 * Then the board is ready to install the headers with:
 ```
-sudo apt-get install linux-headers-$(uname -r)
+# sudo apt-get install linux-headers-$(uname -r)  # does not work
+# manual installation:
+cd /tmp
+wget http://repos.rcn-ee.com/debian/pool/main/l/linux-upstream/linux-headers-4.4.54-ti-r93_1stretch_armhf.deb
+sudo dpkg -i linux-headers-4.4.54-ti-r93_1stretch_armhf.deb
 ```
 * The code is in github at https://github.com/openvlc/OpenVLC. In Latest_Version subdirectory you will find the Driver (kernel) and PRU code folders. Just fetch them by using _sudo git clone https://<span></span>github.com/openvlc/OpenVLC_, and copy them into the path ”/home/Debian”.
 ```
