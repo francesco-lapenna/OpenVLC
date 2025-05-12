@@ -84,9 +84,21 @@ The firsts steps are to prepare the beaglebone. This must be done in the OpenVLC
 sudo nano /boot/uEnv.txt
 ```
 * Reboot the OpenVLC board. The HDMI is disable after rebooting.
-* Install the headers: Connect the beaglebone to the Internet, and then update with: _sudo apt-get update_
-* Then the board is ready to install the headers with: _sudo apt-get install linux-headers-$(uname -r)_
-The code is in github at https://github.com/openvlc/OpenVLC. In Latest_Version subdirectory you will find the Driver (kernel) and PRU code folders. Just fetch them by using _sudo git clone https://<span></span>github.com/openvlc/OpenVLC_, and copy them into the path ”/home/Debian”.
+* Install the headers: Connect the beaglebone to the Internet, and then update with:
+```
+sudo apt-get update
+```
+* Then the board is ready to install the headers with:
+```
+sudo apt-get install linux-headers-$(uname -r)
+```
+* The code is in github at https://github.com/openvlc/OpenVLC. In Latest_Version subdirectory you will find the Driver (kernel) and PRU code folders. Just fetch them by using _sudo git clone https://<span></span>github.com/openvlc/OpenVLC_, and copy them into the path ”/home/Debian”.
+```
+# for OpenVLC_VL_IR version:
+sudo git clone https://github.com/openvlc/OpenVLC
+sudo cp -r OpenVLC/OpenVLC_VL_IR/Driver /home/Debian
+sudo cp -r OpenVLC/OpenVLC_VL_IR/PRU /home/Debian
+```
 
 #### Connecting the cape
 
