@@ -80,6 +80,10 @@ sudo ./bbb-eMMC-flasher-eewiki-ext4.sh
 The firsts steps are to prepare the beaglebone. This must be done in the OpenVLC board operating as TX as well as in the OpenVLC board operating as RX. These are the steps:
 
 * Disable the HDMI: The HDMI uses some PRU pins that we need. To disable the HDMI cape edit the uEnv.txt file: _sudo nano /boot/uEnv.txt_ and uncomment the line: _dtb=am335x-boneblack-emmc-overlay.dtb_
+```
+ssh debian@192.168.7.2
+sudo nano /boot/uEnv.txt
+```
 * Reboot the OpenVLC board. The HDMI is disable after rebooting.
 * Install the headers: Connect the beaglebone to the Internet, and then update with: _sudo apt-get update_
 * Then the board is ready to install the headers with: _sudo apt-get install linux-headers-$(uname -r)_
