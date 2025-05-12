@@ -81,7 +81,6 @@ The firsts steps are to prepare the beaglebone. This must be done in the OpenVLC
 
 * Disable the HDMI: The HDMI uses some PRU pins that we need. To disable the HDMI cape edit the uEnv.txt file: _sudo nano /boot/uEnv.txt_ and uncomment the line: _dtb=am335x-boneblack-emmc-overlay.dtb_
 ```
-ssh debian@192.168.7.2
 sudo nano /boot/uEnv.txt
 ```
 * Reboot the OpenVLC board. The HDMI is disable after rebooting.
