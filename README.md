@@ -86,6 +86,10 @@ sudo nano /boot/uEnv.txt
 * Reboot the OpenVLC board. The HDMI is disable after rebooting.
 * Install the headers: Connect the beaglebone to the Internet, and then update with:
 ```
+# Sources repoitories are old, edit /etc/apt/sources.list and replace your current entries with
+# deb http://archive.debian.org/debian jessie main contrib non-free
+# deb http://archive.debian.org/debian-security jessie/updates main contrib non-free
+
 # connect to the internet (TODO: remove): sudo dhclient -v usb0
 sudo apt-get update
 ```
