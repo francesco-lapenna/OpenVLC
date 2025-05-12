@@ -137,6 +137,11 @@ sudo ln -s /usr/bin/clpru clpru
 sudo ln -s /usr/bin/lnkpru lnkpru
 ```
 * Then go to the PRU folder, enter TX/RX and run sudo _./deploy.sh_. This will boot up the PRUs with the code necessary to transmit and receive VLC data.
+```
+cd /home/Debian/PRU/TX_VL_IR_Dimming_0  # for OpenVLC_VL_IR version 0% dimming
+sudo chmod +x deploy.sh
+sudo ./deploy.sh
+```
     
 #### Working with the TX/RX
 
