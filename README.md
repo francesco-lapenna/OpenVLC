@@ -65,6 +65,9 @@ Now that we have the SD Card ready with the image, we need to flash the BBB. Fol
 
 * With the power disconnected, insert the SD Card into the BBB and power it up with the USB cable.
 * Connect through SSH to the IP 192.168.7.2.
+```
+ssh debian@192.168.7.2
+```
 * In order to run the OS on the SD Card, flash it into the BBB: go to _/opt/scripts/tools/eMMC_ and run _sudo ./bbb-eMMC-flasher-eewiki-ext4.sh_ 
 ```
 cd /opt/scripts/tools/eMMC
