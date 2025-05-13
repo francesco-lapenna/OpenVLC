@@ -165,7 +165,13 @@ sudo ./deploy.sh
 
 Once you have done the steps above in TX and RX, you can start using VLC as a common network interface.
 
-You could measure the achievable throughput by using the iperf tool. To this end, launch iperf in client mode at the TX (_sudo iperf -c 192.168.0.2 -u -b 400k -l 800 -p 10001 -t 100_) and in server mode at the RX (_sudo iperf -u -l 800 -s -i3 -B 192.168.0.2 -p 10001_). Make sure that TX and RX have different IPs and the IP of the RX (iperf server) is 192.168.0.2.
+You could measure the achievable throughput by using the iperf tool. To this end, launch iperf in client mode at the TX and in server mode at the RX. Make sure that TX and RX have different IPs and the IP of the RX (iperf server) is 192.168.0.2.
+```
+# TX:
+sudo iperf -c 192.168.0.2 -u -b 400k -l 800 -p 10001 -t 100
+# RX:
+sudo iperf -u -l 800 -s -i3 -B 192.168.0.2 -p 10001
+```
 
 The image below shows the results of an iperf test at 2.5 meters of distance:
 
