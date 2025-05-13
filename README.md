@@ -58,6 +58,9 @@ We need to flash the BBB with a Debian image. To do that we need a SD Card with 
 * Format the SD Card with SD card formatter with overwrite format.
 * Download the image from the link:https://files.beagle.cc/file/beagleboard-public-2021/images/bone-debian-8.7-iot-armhf-2017-03-19-4gb.img.xz
 * Write the image _”bone-debian-8.7-iot-armhf-2017-03-19-4gb”_ to the SD Card. If you use Windows, you may use Win32 Disk Imager. For Linux, you may use the command line dd.
+penVLC_VL_IR
+> [!IMPORTANT]  
+> Istruzioni modificate per BeagleBone Black [TODO inserire versione] con O
 
 #### Flashing the BBB
 
@@ -89,13 +92,15 @@ sudo nano /boot/uEnv.txt
 # connect to the internet (TODO remove): sudo dhclient -v usb0
 sudo apt-get update
 ```
-> [!NOTE]
+> [!NOTE]  
 > Sources repoitories are old, edit /etc/apt/sources.list and replace your current entries with  
 deb http://archive.debian.org/debian jessie main contrib non-free  
 deb http://archive.debian.org/debian-security jessie/updates main contrib non-free
 * Then the board is ready to install the headers with:
+> [!WARNING]  
+> ```sudo apt-get install linux-headers-$(uname -r)```  
+> does not work
 ```
-# sudo apt-get install linux-headers-$(uname -r)  # does not work
 # manual installation:
 cd /tmp
 wget http://repos.rcn-ee.com/debian/pool/main/l/linux-upstream/linux-headers-4.4.54-ti-r93_1stretch_armhf.deb
