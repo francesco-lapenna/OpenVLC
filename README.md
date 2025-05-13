@@ -60,7 +60,7 @@ We need to flash the BBB with a Debian image. To do that we need a SD Card with 
 * Write the image _”bone-debian-8.7-iot-armhf-2017-03-19-4gb”_ to the SD Card. If you use Windows, you may use Win32 Disk Imager. For Linux, you may use the command line dd.
 penVLC_VL_IR
 > [!IMPORTANT]  
-> Istruzioni modificate per BeagleBone Black [TODO inserire versione] con O
+> Istruzioni modificate per BeagleBone Black [TODO inserire versione] con OpenVLC_VL_IR
 
 #### Flashing the BBB
 
@@ -125,7 +125,8 @@ Connecting the cape to the BBB is quite easy. You just need to plug the cape to 
 
 Once it’s plugged, connect the 5 V power supply and that’s all.
 
-**ATTENTION:** Be careful not to bend the components that stand out when you press or pull the cape.
+>[!WARNING]  
+>Be careful not to bend the components that stand out when you press or pull the cape.
 
 #### Setting up the TX/RX
 
@@ -133,10 +134,12 @@ There are two parts in the TX/RX, the kernel driver and the PRU code. Follow the
 
 * In order to load the kernel driver, run the following command inside the Driver folder:
 ```
+cd /home/Debian/Driver
 sudo chmod +x load_test.sh
 sudo ./load_test.sh
 ```
-With this script, you can change the IP taken by the interface. That’s the IP in the VLC network, so TX and RX must have different IPs (for example TX: 192.168.0.1 and RX 192.168.0.2).
+> [!NOTE]  
+> With this script, you can change the IP taken by the interface. That’s the IP in the VLC network, so TX and RX must have different IPs (for example TX: 192.168.0.1 and RX 192.168.0.2).
 * Once the module driver is installed, make sure that proper paths and symbolic links have been made for the PRU compiler (clpru) and linker (lnkpru). The following commands can be used to this end:
 ```
 cd /usr/share/ti/cgt-pru
@@ -148,7 +151,7 @@ sudo ln -s /usr/bin/lnkpru lnkpru
 * Then go to the PRU folder, enter TX/RX and run sudo _./deploy.sh_. This will boot up the PRUs with the code necessary to transmit and receive VLC data.
 ```
 # TX:
-cd /home/Debian/PRU/TX_VL_IR_Dimming_0  # for OpenVLC_VL_IR version 0% dimming
+cd /home/Debian/PRU/TX_VL_IR_Dimming_0  # for OpenVLC_VL_IR 0% dimming
 sudo chmod +x deploy.sh
 sudo ./deploy.sh
 
